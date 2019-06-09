@@ -1,0 +1,226 @@
+<!DOCTYPE html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>reveal.js</title><link rel="stylesheet" href="css/reset.css"><link rel="stylesheet" href="css/reveal.css"><link rel="stylesheet" href="css/theme/lab.css"><link rel="stylesheet" href="/fonts/RobotoSlab/stylesheet.css"><link rel="stylesheet" href="/fonts/Roboto/stylesheet.css"><!-- Theme used for syntax highlighting of code--><link rel="stylesheet" href="lib/css/monokai.css"><!-- Printing and PDF exports--><script>var link = document.createElement( 'link' );
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script></head><div class="reveal"><div class="slides"><section><h1>Машинное обучение</h1><small><italic>для питонистов</italic></small></section><section><section><blockquote>ИИ - отнюдь не  "электронный сатана", а всего лишь  устройство,
+которое ищет статистические корреляции. Решая глобальную здачау оптимизации,
+он может найти такие решения, конечный результат которых большинству из нас не понравится.
+И мы просто не заметим это вовремя из-за общей сложности системы.
+</blockquote><small><a href="http://lib.ru/LEM/summa/summgl4h.htm">Станислав Лем, 1967</a><br>о ИИ в управлении государством</small></section><section><blockquote>К середине 20'х AI в целом превзойдет возможности человеческого мозга.</blockquote><small><a href="http://future.wikia.com/wiki/Scenario:_Shane_Legg">Шейн Легг, 2008</a><br>Основатель DeepMind</small></section><section><blockquote>В ближайшие 10 лет AI превзойдет человека в основных спобностях
+- зрении, слухе, естественном языке, способностям к мышлению.
+</blockquote><small><a href="https://www.fastcompany.com/3052885/mark-zuckerberg-facebook">Марк Цукенберг, 2015
+</a></small></section><section><blockquote>Я продолжаю бить тревогу, но пока люди не видят роботов,
+убивающих других людей на улицах, они не знают, как реагировать,
+поскольку им такой сценарий кажется нереалистичным.</blockquote><small><a href="https://www.forbes.ru/tehnologii/347945-chelovechestvo-v-opasnosti-ilon-mask-prizval-regulirovat-iskusstvennyy-intellekt">Илон Маск, 2017
+</a></small></section><section><blockquote>Железяка сама начинает так ходить? Нам говорят, что книги у нее нет,
+что она в такую бесову силу играет, несколько часов поучившись,
+в состоянии повторять то, что люди годами искали в новоиндийской защите.</blockquote><small><a href="https://rossaprimavera.ru/article/729591e2">Петр Свидлер, 2017</a><br>гроссмейстер, об AlphaZero</small></section><section><blockquote>Они потратили четыре часа на шахматы, потом за два часа они разбомбили сёги.
+Соответственно, ясно, что теперь они будут решать совершенно другие задачи. 
+Для них шахматы — просто мелочь какая-то.</blockquote><small><a href="https://rossaprimavera.ru/article/729591e2">Сергей Шипов, 2017</a><br>гроссмейстер, об AlphaZero</small></section><section><blockquote>Я вообще ничего не мог поделать, мои мысли будто читали.</blockquote><small><a href="https://habr.com/ru/post/395525/">Джин Ли, 2016</a><br>военный пилот, о воздушном бое с ИИ</small></section></section><section><section><h2>Новости</h2></section><section data-markdown><textarea data-template>- [gizmodo](https://gizmodo.com/tag/neural-networks)
+- [extremetech](https://www.extremetech.com/?s=neural+networks)
+- [aiweekly](http://aiweekly.co/)
+- [medium](https://medium.com/search?q=%20neural%20network)
+</textarea></section><section><a href="https://rossaprimavera.ru/article/729591e2">AlphaZero, после двух часов самостоятельного обучения игре в
+шахматы (без баз партий), смогла обыграть Stockfish_v8 со счетом 155:6
+(839 ничьих)
+</a></section><section><a href="https://www.the-scientist.com/news-opinion/ai-object-recognition-system-operates-at-speed-of-light--64569">ИИ работающий со скоростью света, использование 3D печати для
+изготвления оптических систем распознавания
+</a></section><section><a href="https://www.extremetech.com/extreme/275643-stanford-researchers-build-ai-directly-into-camera-optics">Стендфордские исследователи реализовали систему
+распознавания непосрдественно в оптическом канале камеры
+</a></section><section><a href="https://neurosciencenews.com/brain-reading-neuroimaging-7794/">Чтение мыслей. Использование искуственных нейронных сетей
+для перевода энцефалограмм
+</a></section><section><a href="https://techcrunch.com/2017/12/13/china-cctv-bbc-reporter/">7 минут, столько потребовалось китайской системе безопасности,
+чтобы найти человека в городе
+</a></section><section><a href="https://www.telegraph.co.uk/news/2018/04/12/facial-recognition-used-catch-fugitive-among-60000-concert-goers/">Полиция китая начала применять системы faceid, для задержания
+прeступников на массовых мероприятиях
+</a></section><section><a href="https://www.sciencealert.com/google-is-improving-its-artificial-intelligence-with-artificial-intelligence">Гугл и фейсбук разрабатывают нейронные сети для разработки
+и обучения других нейронных сетей
+</a></section><section><a href="https://arxiv.org/abs/1606.04474">Нейронная сеть гугла способна оценивать здоровье по
+фотографии ретины
+</a></section><section><a href="https://www.extremetech.com/extreme/261491-google-neural-network-can-predict-health-status-retina">Нейронные сети позволили ускорить обработку MRT в 1000 раз
+</a></section><section><a href="https://www.extremetech.com/extreme/271725-mit-neural-network-accelerates-mri-image-processing-by-1000-times">Дата-майнинг выявил скрытые закономерности в развитии музыки
+</a></section><section><a href="http://cur.at/89XC04T?m=web">Гугл разрабатывает платформу для автоматического построения
+AI - AutoML
+</a></section><section><a href="https://www.extremetech.com/computing/262265-googles-automl-creates-machine-learning-models-without-programming-experience">Нейронные сети успешно применяются при изучении дальних
+галактик
+</a></section><section><a href="https://gizmodo.com/ai-is-getting-pretty-good-at-studying-distant-galaxies-1825513242">Нейронная сеть SETI обнаружила множество радиo-вспышек, в
+далекой галактике
+</a></section><section><a href="https://gizmodo.com/setis-new-neural-network-detects-many-more-fast-radio-b-1828957295">AI превращает текст в кошмарные изображения
+</a></section><section><a href="https://gizmodo.com/this-online-ai-tool-takes-your-words-and-turns-them-int-1828413827">Нейронная сеть Street View теперь распознает капчи лучшe людей
+</a></section><section><a href="https://www.extremetech.com/computing/174275-google-has-built-a-neural-network-to-identify-100-million-house-numbers-for-streetview">Испольование ИИ для диагностики рака
+</a></section><section><a href="https://www.extremetech.com/extreme/249212-deep-learning-ai-soon-assist-spotting-cancer">NVidia научила AI бесследно удалять тексты с изображений
+</a></section><section><a href="https://gizmodo.com/nvidia-taught-an-ai-to-flawlessly-erase-watermarks-from-1827474196">DeepMind разработал сеть воссоздающую 3д модели по одному фото
+</a></section><section><a href="https://www.extremetech.com/extreme/271661-google-deepmind-builds-ai-that-reconstructs-3d-objects-from-a-single-photo">Гугл начуил нейронную сеть выдеделять отдельные голоса в
+видео
+</a></section><section><a href="https://www.extremetech.com/computing/267476-google-neural-network-can-isolate-individual-voices-in-videos">Разработчики MIT научили ИИ выделять одтельные инструменты
+из аудио записи
+</a></section><section><a href="https://gizmodo.com/mits-new-ai-powered-software-can-extract-individual-ins-1827372032">ИИ камера, делающая вместо фотографий детские рисунки
+</a></section><section><a href="https://gizmodo.com/this-neural-network-instant-camera-turns-everything-you-1827320631">BigGAN новая веха в генерации изображений
+</a></section><section><a href="https://medium.com/syncedreview/biggan-a-new-state-of-the-art-in-image-synthesis-cf2ec5694024">Nvidia GAN, невероятно реалистичная генерация лиц
+</a></section><section><a href="https://futurism.com/incredibly-realistic-faces-generated-neural-network">ИИ создает невероятно реалистичные фейковые видео
+</a></section><section><a href="https://gizmodo.com/deepfake-videos-are-getting-impossibly-good-1826759848">Люди используют нейронные сети для создания фейкового порно
+с целебами
+</a></section><section><a href="https://www.extremetech.com/extreme/262828-people-using-neural-network-app-create-fake-celebrity-porn">Пример нейронной сети генерирующей уникальных
+аниме-персонажей
+</a></section><section><a href="https://gizmodo.com/watch-this-neural-network-generate-an-infinite-number-o-1820468357">ИИ генерирует пугающе релистичные фотографии людей
+</a></section><section><a href="https://gizmodo.com/watching-this-neural-network-render-truly-photorealisti-1819957128">Китай представил AI-телеведущего работающёго 24/7
+</a></section><section><a href="https://www.theguardian.com/technology/video/2018/nov/09/worlds-first-ai-presenter-unveiled-in-china-video">ИИ превращает фото еды в её состав
+</a></section><section><a href="https://gizmodo.com/ingenious-ai-converts-images-of-food-into-a-list-of-ing-1797064148">Нейронная сеть превращает каракули в фото
+</a></section><section><a href="https://gizmodo.com/turn-doodles-into-furry-cat-monsters-with-machine-learn-1792629969">Нейронная сеть создает новые танцы
+</a></section><section><a href="https://www.extremetech.com/extreme/262828-people-using-neural-network-app-create-fake-celebrity-porn">Пентагон разрабатывает ИИ для поиска пусковых установок
+</a></section><section><a href="https://www.extremetech.com/extreme/270746-the-pentagon-is-building-an-ai-to-find-secret-nuclear-missiles">ИИ в сухую уделывает опытного пилота в симуляциях воздушного
+боя
+</a></section><section><a href="https://habr.com/post/395525/">DARPA вкладывает $2B в развитие следующего поколения AI</a></section></section><section><section><h1>ML</h1><small>machine learning</small></section><section><h2>Суть ML</h2><img src="img/ml_comics.png"></section><section><h3>Соседние области</h3><img class="stretch" src="img/ml_map_big.png"></section><section data-markdown><textarea data-template>### Соседние области
+- Нейронные сети
+- Распознавание образов
+- Искуственныйинтелект
+- Дата майнинг
+</textarea></section><section><h3>Разделы ML</h3><img class="stretch" src="img/ml_map_detailed.png"></section><section data-markdown><textarea data-template>### Разделы
+- Обучение с учителем
+  - Классификация
+  - Регрессия
+- Обучение без учителя
+  - Кластеризация
+  - Снижение рзамерности данных
+- Обучение с подкреплением
+- Оптимизация
+- Управлениe
+- Генерация
+</textarea></section><section><h3>Обучение с учителем</h3></section><section><h3>Обучение с подкреплением</h3></section><section><h3>Обучение без учителя</h3></section><section><h3>выбор алгоритма (scikit) </h3><img class="stretch" src="img/ml_scikit_map.png"></section><section><h3>выбор алгоритма (dlib)</h3><img class="stretch" src="img/ml_dlib_map.png"></section></section><section><h1>NN</h1><small>neural networks</small></section><section><section><h2>Основы</h2></section><section><h3>Нейронная сеть</h3><img src="img/nn_black_box.png"><ul><li>Нейронная сеть это некий "черный ящик", мат-модель, имеющая вход и выход</li><li>Внутренне состоянии модели описывается параметрами $W$</li><li>На вход модели подаются данные $X$</li><li>На выходе получаем ответ $Y$</li></ul></section><!-- section.--><!--   Задача обучения нейронной сети, заключается в поиске таких значений параметров модели $W$,--><!--   при котороых результат $Y$, будет иметь минимальную ошибку.--><!-- section(data-markdown): textarea(data-template).--><!--   ### Сокращения--><!--   - ML - Machine Learning / машинное обучение--><!--   - NN - Artificial Neural Network / искуственные нейронные сети--><!--   - DL - Deep Learning / обучение глубоких нейронных сетей--><section data-markdown><textarea data-template>### Основные термины
+- [neuron]()              - нейрон (искуственный)
+- [activation function]() - функция активации
+- [error (loss)]()        - ошибка / функция потерь
+- [gradientdescent]()     - градиентный спуск
+- [backpropagation]()     - обратное распространение
+- [overfit]()             - переобучениe
+
+</textarea></section><section data-markdown><textarea data-template>### Стандартные обозначения
+- [$X$]()      - входные данные подаваемый в модель
+- [$Y$]()      - ожидаемый результат
+- [$\hat Y$]() - полученный результат
+- [$E$]()      - ошибка предсказания
+- [$W$]()      - параметры модели
+
+</textarea></section><section><h3>Совсем Немного математики</h3><img class="plain small" src="img/pushen_aaa.png"></section><section><h3>линейнoe уравнение</h3><p>$$
+\begin{split}
+y & = w_0 + w_1 x_1 \\
+y & = w_0 + w_1 x_1 + w_2 x_2  \\
+  & \cdots \\
+y & = w_0 + w_1 х_1 + w_2 х_2 + \cdots + w_n x_n \\
+\end{split}
+$$
+
+</p></section><section><h3>вектор</h3><p>$$ \vec{w}=[w_0,w_1,\cdots, w_n] $$</p></section><section><h3>матрица</h3><p>$$ W_{n \times m} =
+\begin{bmatrix}
+  w_{0,0} & w_{0,1} & \cdots & w_{0,m} \\
+  w_{1,0} & w_{1,1} & \cdots & w_{1,m} \\
+  \cdots  & \cdots  & \cdots & \cdots  \\
+  w_{n,0} & w_{n,1} & \cdots & w_{n,m}
+\end{bmatrix}$$</p><small>Матрицы обычно обозначаются заглавными буквами $X$, a их элементы строчными $x_{i,j}$</small></section><section><h3>матрицы можно умножать</h3><p>$A \cdot B = C$</p><small><ul><li>ширина матрицы $A$ должна быть равна высоте матрицы $B$</li><li>результатом умножения будет новая матрица</li></ul></small></section><section><h3>Геометрический смысл</h3><img src="img/dot_product.png"></section><section><h3>Математический смысл</h3><p>$$
+  W_{1 \times n} = [w_0, w_1, \cdots, w_n] \\
+  X_{1 \times n} = [x_0, x_1, \cdots, x_n] \\
+  W \cdot X^T = [w_0 x_0 + w_1 x_1 + \cdots + w_n x_n]_{1 \times 1}
+$$
+  </p></section><section><h2>ВЫДЫХАЕМ</h2><h6>этого вполне достаточно чтобы разобраться с нейронными сетями</h6><img class="plain small" src="img/pushen_godfather.png"></section><!-- section--><!--   h4 функция--><!--   p $f$ - математическое действие над аргументом--><!--section(data-markdown): textarea(data-template).
+  ### Общепринятые сокращения
+
+  - ML - Machine Learning / машинное обучение
+  - NN, ANN - Artificial Neural Network / искуственные нейронные сети
+  - DL - Deep Learning / обучение глубоких нейронных сетей
+  - CNN - Convolution Neural Net / сверточные нейронные сети
+  - RNN - Recurrent Neural Net / рекурентные нейронные сети
+  - GAN - Generativ Adversarial Net / генеративно конкурентные сети
+  - TF - TensorFlow--><!-- section(data-markdown): textarea(data-template).
+  ### Общепринятая нотация
+  - $Х,x$ - Вектор входных данных, подаваемый в модель
+  - $х=[х_1,\cdots,x_m]$ - Элементы одной записи, фичи (например пол, возраст и т.п) 
+  - $m$ - Размерность данных, ко-во фич
+  - $Y, y$ - Вектор ожидаемого результата (при обучении с учителем)
+  - $\hat Y, \hat y, y'$ - Результат полученный на выходе в действительности
+  - $Е=||y-\hat y||$ - Error, Loss, функция потерь, ошибка предсказания
+  - $W,w$ - Веса (Weight) мат-модели
+  - $w_0$ или $b$ - bias, смещение
+  - $\sigma$ - Сигма, функция активации
+  - $N$ - Kо-во элементов во входном датасете--></section><section><section><h2>Нейрон</h2></section><section><h3>1943 год</h3><img src="img/nn_uorren.png"><br><small>Мат-модель нейронной связи была предложена <b>75 лет</b> назад <br>Уорреном Мак-Каллоком</small></section><section><h3>Модель нейрона</h3><img src="img/nn_neuron.png"><small>\begin{align*}
+\large y &= f(\vec x \cdot \vec w) \\
+\large   &= f(w_0 + x_1 w_1 + x_2 w_2 + \dots +x_n w_n) 
+\end{align*}
+
+</small></section><section data-markdown><textarea data-template>- [$x_1 \dots x_n$]() - входные данные
+- [$x_0$]()           - по соглашению всегда равен $1$
+- [$y$]()             - выход
+- [$w_0 \dots w_n$]() - веса, которые необходимо найти
+- [$w_0$]()           - свободный вес, смещение (bias)
+- [$f$]()             - фунция активации
+
+</textarea></section><section><h3>нейрон с одним входом</h3><img src="img/nn_linear.png"><small><p>$$y = f(w_0 + w_1 x_1)$$</p><p>В случае если на входе модели только одна переменная $x$, мы получаем простейшую линейную модель.
+Этого уже достаточно, чтобы аппроксимировать некое линейное расспределение данных.</p></small></section><section><h3>подбор параметров $w_0,w_1$</h3><a href="https://www.desmos.com/calculator/jwquvmikhr"><img src="img/nn_linear.gif"></a></section><section><h3>нейрон с двумя входами</h3><img src="img/nn_planar.png"><small><p>$$y = f(w_0 + w_1 x_1 + w_2 x_2)$$</p><p>Если на входе две переменные $x$, мы получаем уже уравнение плоскости</p></small></section><section><h3>Аппроксимация плоскостью</h3><img class="stretch" src="img/nn_planar_graph.png"></section><!--section(data-background-iframe="https://ailove-lab.github.io/hyper/07.html")--><section><h3>с тремя входами и выше</h3><img class="stretch" src="img/nn_neuron_model.png"><p>$$ y = f(w_0 + x_1 w_1 + x_2 w_2 + \dots +x_n w_n)$$</p><small>Mы по прежнему получаем линейное уравнения, гиперплоскости, представить и
+изобразить которых довольно <a href='https://ailove-lab.github.io/hyper/07.html'>сложно</a>, т.к. мы существа трехмерные
+</small></section><section><h2>Всё вокруг кривое</h2><blockquote>На свете нет ничего одинакового. Все распределяется по гауссиане. Этот старый дурак не сообразил, что существует дисперсия свойств…</blockquote><small>A. и Б. Стругацкие, "Понедельник начинается в субботу"</small><!-- img.plain.small(src="img/pushen_philosophy.png")--></section></section><section><section><h2>Функции Активации</h2></section><section><img class="plain small" src="img/pushen_magick.png"><h2><div><span style="color:#ff8080;">В</span><span style="color:#ff9580;">Ж</span><span style="color:#ffaa80;">У</span><span style="color:#ffbf80;">Х</span><span style="color:#ffea80;"> </span><span style="color:#ffff80;">И</span><span style="color:#d5ff80;"> </span><span style="color:#aaff80;">В</span><span style="color:#80ff80;">С</span><span style="color:#80ffc0;">Ё</span><span style="color:#80ffff;"> </span><span style="color:#80d5ff;">К</span><span style="color:#80aaff;">Р</span><span style="color:#8080ff;">И</span><span style="color:#9780ff;">В</span><span style="color:#af80ff;">О</span><span style="color:#c680ff;">Е</span></div></h2></section><section data-markdown><textarea data-template>### Что о них достаточно знать
+- с ними нейронные сети могут работать с нелинейными данными
+- основных всего четыре:
+  - [Relu]()    - для скрытых слоев
+  - [Sigmoid]() - для бинарной классифкации
+  - [Softmax]() - для классификации
+  - [Linear]()  - для регрессии
+
+</textarea></section><section><h3>Relu</h3><p>$$y=max(0,x)$$</p><img src="img/nn_relu.png"><br><small>Данная функция отсекает все отрицательные значения на выходе нейрона.
+Используется во внутренних слоях.
+</small></section><section><h3>Sigmoid</h3>$$ y = \frac{1}{1+e^{-x}}$$<img class="stretch" src="img/nn_sigmoid.png"><br><small>Используется при бинарной классификации</small></section><section><h3>Linear</h3>$$y = x$$<img class="stretch" src="img/nn_linear_act.png"><br><small>Дает обычную линейную регрессию</small></section><section><h3>Softmax</h3>$$y_i = \frac{e^{x_i}}{\sum_j e^{x_j}}$$<img class="stretch" src="img/nn_softmax_act.png"><small>Когда классов больше двух, данная функция дает итоговую вероятность каждого класса</small></section><section><h3>Прочий зоопарк</h3><img src="img/nn_activation_main.png"></section><section><h3>Джунгли</h3><img class="stretch" src="img/nn_activation_zoo.png"></section></section><section><section><h2>НЕЙРОННАЯ СЕТЬ</h2></section><section><h3>берём два нейрона</h3><img src="img/two_neurons.png"></section><section><h6>Хотя, чего мелочится</h6><h3>Берем тысячу нейронов</h3><h6>И намазываем их слоями друг на друга</h6></section><section><h3>Как-то так</h3><img class="stretch" src="img/perceptron.png"></section><section><h3>Зачем?</h3><ul><li>Приблизительно так устроен живой мозг</li><li>Чем больше нейронов, тем модель "умнее" <br/>(но это не точно)</li></ul></section><section><h3>Пример с яблоком</h3><img class="stretch" src="img/apple_0.jpg"><small>Представьте, что ваши данные это яблоко, а Нож - классификатор, который может разрезать яблоко на две части</small></section><section><h3>Один нейрон</h3><img class="stretch" src="img/apple_1.jpg"><small>Один нейрон позволяет разрезать яблоко-данные на две части</small></section><section><h3>Два нейрона</h3><img class="stretch" src="img/apple_2.jpg"><small>Два нейрона позволяет разрезать яблоко на три части</small></section><section><h3>Три нейрона</h3><img class="stretch" src="img/apple_3.jpg"><small>Три нейрона позволяют нам  вырезрать из аблока сердцивину целиком</small></section><section><h3>100500 нейронов</h3><img class="stretch" src="img/apple_4.jpg"><br><small>способны аппрокисмировать что угодно</small></section><section><h3>Живой пример</h3></section><section data-background-iframe="/playground"></section></section><section><section><h2>ОБУЧЕНИЕ NN</h2></section><section><h3>Обучение NN</h3><img src="img/nn_black_box.png"><br>Обучени нейронной сети, заключается в подборе таких параметров модели $W$,
+при которых ошибка на выходе будет минимальна</section><section><h3>Ключевые темы</h3><ul><li>Loss function<br><small>функция потерь</small></li><li>Gradient descent<br><small>градиентные спуск</small></li><li>Backpropagation<br><small>обратное распространение ошибки</small></li><!-- li Overfitting<br>--><!--   small переобучение--></ul></section><section><h2>Loss function</h2><ul><li>Результат работы любой мат-модели неточен</li><li>Точность модели расчитывается с помощью функции потерь</li><li>Задача обучения сводится к минимизации данной функции</li><li>Типов ункций несколько, выбор конкретной определяется решаемой задачей</li><li>Функции отличаются скоростью работы и точностью</li></ul></section><section data-markdown><textarea data-template>###### Функции потерь для
+### Регрессии
+- Mean Squared Error Loss
+- Mean Squared Logarithmic Error Loss
+- Mean Absolute Error Loss
+    </textarea></section><section data-markdown><textarea data-template>###### Функции потерь для
+### Бинарной классификации
+- Binary Cross-Entropy
+- Hinge Loss
+- Squared Hinge Loss
+</textarea></section><section data-markdown><textarea data-template>###### Функции потерь для
+### Мультиклассовой классификации
+- Multi-Class Cross-Entropy Loss
+- Sparse Multiclass Cross-Entropy Loss
+- Kullback Leibler Divergence Loss
+</textarea></section><section data-markdown><textarea data-template>### Доп-Материал
+
+- [Объяснение от Siraj'а](https://www.youtube.com/watch?v=IVVVjBSk9N0)
+- [Лекция, стэндфорд](https://www.youtube.com/watch?v=h7iBpEHGVNc)
+- [подборка, youtube](https://www.youtube.com/results?search_query=loss+function)
+</textarea></section><section><h3>Gradient descent</h3><p>Градиeнтный спуск, это метод численного поиска минимума целевой функции.</p><img class="stretch" src="img/gradient_descent_strategies.gif"></section><section><ul><li>Существует несколько популярных алгоритмов</li><li>Самая популярная стратегия Adam</li><li>Менее популярные АдаGrad, AdaDelta</li><li>Другие стратегии:  sgd, mb-gd, momentum, nag, rmsprop</li></ul></section><section data-markdown><textarea data-template>### Доп-Материал
+- [Себястиан Рюдер](http://ruder.io/optimizing-gradient-descent/)
+- [Siraj](https://www.youtube.com/watch?v=nhqo0u1a6fw)
+
+</textarea></section><section><h3>Backpropagation</h3><p>Oбратное распространение ошибки - модификация градиентного спуска применительно к нейронным сетям</p></section><section data-markdown><textarea data-template>### Доп-Материал
+- [Siraj](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
+- [Опять Siraj](https://www.youtube.com/watch?v=FaHHWdsIYQg)
+- [Математично](https://www.youtube.com/watch?v=IHZwWFHWa-w)
+- [на русском](https://www.youtube.com/watch?v=HA-F6cZPvrg)
+- [подборка на русскоам](https://www.youtube.com/results?search_query=%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5+%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8)</textarea></section></section><section><section><h2>Матрицы</h2></section></section><section><h2>Инструменты</h2><section>python</section><section>numpy</section><section>pandas</section><section>tensorflow</section><section>pytorch</section><section>keras</section><section>scikit</section><section>sympy</section><section>jupyter</section><section>colab</section><section>client</section></section><section><h2>Материалы</h2><section data-markdown><textarea data-template>### Курсы
+- [Andrew Ng, Стэнфорд](https://www.youtube.com/watch?v=PPLop4L2eGk&list=PLLssT5z_DsK-h9vYZkQkYNWcItqhlRJLN)
+- [Abu-Mоstafa, Калтех](https://www.youtube.com/watch?v=mbyG85GZ0PI&list=PLD63A284B7615313A)
+- [Brandon Rohrer](https://www.youtube.com/user/BrandonRohrer)
+- [Sentdex, питон](https://www.youtube.com/watch?v=OGxgnH8y2NM&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v)
+- [Различные курсы на русском](https://www.youtube.com/results?search_query=%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BA%D1%83%D1%80%D1%81)
+
+</textarea></section><section data-markdown><textarea data-template>### Хабы
+- [Искусственный интелект](https://habr.com/hub/artificial_intelligence/)
+- [Машинное обучение](https://habr.com/hub/machine_learning/)
+
+</textarea></section><section data-markdown><textarea data-template>### Oчень позитивно и доступно
+- [Siraj Raval](https://www.youtube.com/channel/UCWN3xxRkmTPmbKwht9FuE5A)
+- [Coding Train](https://www.youtube.com/user/shiffman/playlists?view=50&shelf_id=16&sort=dd)
+- [3blue1brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)</textarea></section></section></div></div><script src="js/reveal.js"></script><script>// More info about config & dependencies:
+// - https://github.com/hakimel/reveal.js#configuration
+// - https://github.com/hakimel/reveal.js#dependencies
+Reveal.initialize({
+dependencies: [
+    { src: 'plugin/markdown/marked.js' },
+    { src: 'plugin/markdown/markdown.js' },
+    { src: 'plugin/math/math.js', async: true },
+    { src: 'plugin/notes/notes.js', async: true },
+    { src: 'plugin/highlight/highlight.js', async: true }
+],
+history: true,
+});</script>

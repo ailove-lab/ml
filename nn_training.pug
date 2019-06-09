@@ -1,0 +1,88 @@
+section
+  h2 ОБУЧЕНИЕ NN
+
+section
+  h3 Обучение NN
+  img(src="img/nn_black_box.png")
+  br
+  | Обучени нейронной сети, заключается в подборе таких параметров модели $W$,
+  | при которых ошибка на выходе будет минимальна
+  
+section
+  h3 Ключевые темы
+  ul
+    li Loss function<br>
+      small функция потерь
+    li Gradient descent<br>
+      small градиентные спуск
+    li Backpropagation<br>
+      small обратное распространение ошибки
+    // li Overfitting<br>
+    //   small переобучение
+
+section
+  h2 Loss function
+  ul
+    li Результат работы любой мат-модели неточен
+    li Точность модели расчитывается с помощью функции потерь
+    li Задача обучения сводится к минимизации данной функции
+    li Типов ункций несколько, выбор конкретной определяется решаемой задачей
+    li Функции отличаются скоростью работы и точностью
+
+section(data-markdown): textarea(data-template).
+  ###### Функции потерь для
+  ### Регрессии
+  - Mean Squared Error Loss
+  - Mean Squared Logarithmic Error Loss
+  - Mean Absolute Error Loss
+      
+section(data-markdown): textarea(data-template).
+  ###### Функции потерь для
+  ### Бинарной классификации
+  - Binary Cross-Entropy
+  - Hinge Loss
+  - Squared Hinge Loss
+
+section(data-markdown): textarea(data-template).
+  ###### Функции потерь для
+  ### Мультиклассовой классификации
+  - Multi-Class Cross-Entropy Loss
+  - Sparse Multiclass Cross-Entropy Loss
+  - Kullback Leibler Divergence Loss
+ 
+section(data-markdown): textarea(data-template).
+  ### Доп-Материал
+
+  - [Объяснение от Siraj'а](https://www.youtube.com/watch?v=IVVVjBSk9N0)
+  - [Лекция, стэндфорд](https://www.youtube.com/watch?v=h7iBpEHGVNc)
+  - [подборка, youtube](https://www.youtube.com/results?search_query=loss+function)
+
+section
+  h3 Gradient descent
+  p Градиeнтный спуск, это метод численного поиска минимума целевой функции.
+  img.stretch(src="img/gradient_descent_strategies.gif")
+
+section
+  ul
+    li Существует несколько популярных алгоритмов
+    li Самая популярная стратегия Adam
+    li Менее популярные АдаGrad, AdaDelta
+    li Другие стратегии:  sgd, mb-gd, momentum, nag, rmsprop
+
+
+section(data-markdown): textarea(data-template).
+  ### Доп-Материал
+  - [Себястиан Рюдер](http://ruder.io/optimizing-gradient-descent/)
+  - [Siraj](https://www.youtube.com/watch?v=nhqo0u1a6fw)
+
+section
+  h3 Backpropagation
+  p Oбратное распространение ошибки - модификация градиентного спуска применительно к нейронным сетям
+
+section(data-markdown): textarea(data-template).
+  ### Доп-Материал
+  - [Siraj](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
+  - [Опять Siraj](https://www.youtube.com/watch?v=FaHHWdsIYQg)
+  - [Математично](https://www.youtube.com/watch?v=IHZwWFHWa-w)
+  - [на русском](https://www.youtube.com/watch?v=HA-F6cZPvrg)
+  - [подборка на русскоам](https://www.youtube.com/results?search_query=%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5+%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8)
