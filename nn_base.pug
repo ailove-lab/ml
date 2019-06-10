@@ -1,14 +1,24 @@
 section
+  h3 Введение
+  ul
+    li.fragment Нейронные сети это тип машинного обучения
+    li.fragment Идея взята из устройства живого мозга
+    li.fragment NN тяжелее обучать но по сравнению с другими алгоритмами ML, они часто дают более точные результаты
+    li.fragment NN работают медленнее других алгоритмов ML
+    li.fragment Существует масса различных архитекур NN
+    li.fragment Самые популярные архитектуры Сверточные, Состязательные и Рекуррентные
+
+section
   h2 Основы
 
 section
   h3 Нейронная сеть
   img(src='img/nn_black_box.png')
   ul
-    li Нейронная сеть это некий "черный ящик", мат-модель, имеющая вход и выход
-    li Внутренне состоянии модели описывается параметрами $W$
-    li На вход модели подаются данные $X$
-    li На выходе получаем ответ $Y$
+    li.fragment Нейронная сеть это некий "черный ящик", мат-модель, имеющая вход и выход
+    li.fragment Внутренне состоянии модели описывается параметрами $W$
+    li.fragment На вход модели подаются данные $X$
+    li.fragment На выходе получаем ответ $Y$
 
 // section.
 //   Задача обучения нейронной сети, заключается в поиске таких значений параметров модели $W$,
@@ -21,23 +31,24 @@ section
 //   - DL - Deep Learning / обучение глубоких нейронных сетей
 
   
-section(data-markdown): textarea(data-template).
-  ### Основные термины
-  - [neuron]()              - нейрон (искуственный)
-  - [activation function]() - функция активации
-  - [error (loss)]()        - ошибка / функция потерь
-  - [gradientdescent]()     - градиентный спуск
-  - [backpropagation]()     - обратное распространение
-  - [overfit]()             - переобучениe
+section
+  h3 Основные термины
+  ul
+    li.fragment: <a>neuron             </a> - нейрон (искуственный)
+    li.fragment: <a>activation function</a> - функция активации
+    li.fragment: <a>error (loss)       </a> - ошибка / функция потерь
+    li.fragment: <a>gradientdescent    </a> - градиентный спуск
+    li.fragment: <a>backpropagation    </a> - обратное распространение
+    li.fragment: <a>overfit            </a> - переобучениe            
 
-
-section(data-markdown): textarea(data-template).
-  ### Стандартные обозначения
-  - [$X$]()      - входные данные подаваемый в модель
-  - [$Y$]()      - ожидаемый результат
-  - [$\hat Y$]() - полученный результат
-  - [$E$]()      - ошибка предсказания
-  - [$W$]()      - параметры модели
+section
+  h3 Стандартные обозначения
+  ul
+    li.fragment <a>$X$</a>      - входные данные подаваемый в модель
+    li.fragment <a>$Y$</a>      - ожидаемый результат
+    li.fragment <a>$\hat Y$</a> - полученный результат
+    li.fragment <a>$E$</a>      - ошибка предсказания
+    li.fragment <a>$W$</a>      - параметры модели
 
   
 section
@@ -47,20 +58,20 @@ section
     
 section
   h3 линейнoe уравнение
-  p.
-    $$
-    \begin{split}
-    y & = w_0 + w_1 x_1 \\
-    y & = w_0 + w_1 x_1 + w_2 x_2  \\
-      & \cdots \\
-    y & = w_0 + w_1 х_1 + w_2 х_2 + \cdots + w_n x_n \\
-    \end{split}
-    $$
+  
+  p.fragment $y = w_0 + w_1 x_1$
+  p.fragment $y = w_0 + w_1 x_1 + w_2 x_2$
+  p.fragment $\cdots$
+  p.fragment $y= w_0 + w_1 х_1 + w_2 х_2 + \cdots + w_n x_n$
 
 
 section
   h3 вектор
-  p $$ \vec{w}=[w_0,w_1,\cdots, w_n] $$
+  p.fragment $$\vec{w}=[w_0,w_1,\cdots, w_n] $$
+  p.fragment $$\vec{x}=[x_0,x_1,\cdots, x_n] $$
+  p.fragment
+    | Произведение векторов (скалярное)
+    | $$\vec{w}\cdot\vec{x}=w_0 x_0 + w_1 x_1 + \cdots + w_n x_n$$
 
 section
   h3 матрица
@@ -81,17 +92,19 @@ section
     li ширина матрицы $A$ должна быть равна высоте матрицы $B$
     li результатом умножения будет новая матрица
 
+  
 section
   h3 Геометрический смысл
   img(src='img/dot_product.png')
+
 
 section
   h3 Математический смысл
   p.
     $$
-      W_{1 \times n} = [w_0, w_1, \cdots, w_n] \\
-      X_{1 \times n} = [x_0, x_1, \cdots, x_n] \\
-      W \cdot X^T = [w_0 x_0 + w_1 x_1 + \cdots + w_n x_n]_{1 \times 1}
+      W_{1 \times n} = [[w_0, w_1, \cdots, w_n]] \\
+      X_{1 \times n} = [[x_0, x_1, \cdots, x_n]] \\
+      W \cdot X^T = [[w_0 x_0 + w_1 x_1 + \cdots + w_n x_n]]_{1 \times 1}
     $$
       
 section

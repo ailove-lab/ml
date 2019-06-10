@@ -18,13 +18,15 @@ section
     \end{align*}
 
 
-section(data-markdown): textarea(data-template).
-  - [$x_1 \dots x_n$]() - входные данные
-  - [$x_0$]()           - по соглашению всегда равен $1$
-  - [$y$]()             - выход
-  - [$w_0 \dots w_n$]() - веса, которые необходимо найти
-  - [$w_0$]()           - свободный вес, смещение (bias)
-  - [$f$]()             - фунция активации
+section
+  h3 параметры
+  ul
+    li <a>$\vec{x}= x_1 \dots x_n$</a> - входные данные
+    li <a>$x_0$          </a> - по соглашению всегда равен $1$
+    li <a>$\vec{w}= w_0 \dots w_n$</a> - веса, которые необходимо найти
+    li <a>$w_0$          </a> - свободный вес, смещение (bias)
+    li <a>$y$            </a> - выход
+    li <a>$f$            </a> - фунция активации
 
   
 section
@@ -56,14 +58,16 @@ section
 section
   h3 Аппроксимация плоскостью
   img.stretch(src='img/nn_planar_graph.png')
-
+  small 
+    p Входные данные: $x_1$ - осадки, $x_2$ - температура
+    p Выходные: $y$ - урожай яблок
 
 //section(data-background-iframe="https://ailove-lab.github.io/hyper/07.html")
 section
   h3 с тремя входами и выше
 
   img(src='img/nn_neuron_model.png')
-  small.
+  small
     p $$ y = f(w_0 + x_1 w_1 + x_2 w_2 + \dots +x_n w_n)$$
     p.
       Mы по прежнему получаем линейное уравнения, гиперплоскости, представить и

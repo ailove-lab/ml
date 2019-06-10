@@ -9,30 +9,32 @@ section
   | при которых ошибка на выходе будет минимальна
   
 section
-  h3 Ключевые темы
+  h3 Ключевые вопросы
   ul
-    li.fragment Loss function<br>
-      small функция потерь<br>
-        span.fragment  "Как измерить точность?"
-    li.fragment Gradient descent<br>
-      small
-        | градиентные спуск<br>
-        span.fragment "Как повысить точность?"
-    li.fragment Backpropagation<br>
-      small
-        | обратное распространение ошибки <br>
-        span.fragment "Как повысить точность NN?"
+    li.fragment
+      | Как измерить точность?<br>
+      p.fragment
+        a Loss function<br>
+        small функция потерь
+    li.fragment
+      | Как повысить точность?<br>
+      p.fragment
+        a Gradient descent<br>
+        small градиентные спуск
+      p.fragment
+        a Backpropagation<br>
+        small обратное распространение ошибки<br>
     // li Overfitting<br>
     //   small переобучение
 
 section
   h2 Loss function
   ul
-    li Результат работы любой мат-модели неточен
-    li Точность модели расчитывается с помощью функции потерь
-    li Задача обучения сводится к минимизации данной функции
-    li Типов ункций несколько, выбор конкретной определяется решаемой задачей
-    li Функции отличаются скоростью работы и точностью
+    li.fragment Результат работы любой мат-модели неточен
+    li.fragment Точность модели расчитывается с помощью функции потерь
+    li.fragment Задача обучения сводится к минимизации данной функции
+    li.fragment Типов ункций несколько, выбор конкретной определяется решаемой задачей
+    li.fragment Функции отличаются скоростью работы и точностью
 
 section(data-markdown): textarea(data-template).
   ###### Функции потерь для
@@ -55,25 +57,19 @@ section(data-markdown): textarea(data-template).
   - Sparse Multiclass Cross-Entropy Loss
   - Kullback Leibler Divergence Loss
  
-section(data-markdown): textarea(data-template).
-  ### Доп-Материал
-
-  - [Объяснение от Siraj'а](https://www.youtube.com/watch?v=IVVVjBSk9N0)
-  - [Лекция, стэндфорд](https://www.youtube.com/watch?v=h7iBpEHGVNc)
-  - [подборка, youtube](https://www.youtube.com/results?search_query=loss+function)
 
 section
   h3 Gradient descent
   p Градиeнтный спуск, это метод численного поиска минимума целевой функции.
-  img.stretch(src="img/gradient_descent_strategies.gif")
+  ul
+    li.fragment Существует несколько популярных алгоритмов
+    li.fragment Самая популярная стратегия Adam
+    li.fragment Менее популярные АдаGrad, AdaDelta
+    li.fragment Другие стратегии:  sgd, mb-gd, momentum, nag, rmsprop
 
 section
-  ul
-    li Существует несколько популярных алгоритмов
-    li Самая популярная стратегия Adam
-    li Менее популярные АдаGrad, AdaDelta
-    li Другие стратегии:  sgd, mb-gd, momentum, nag, rmsprop
-
+  h3 СРАВНЕНИЕ АЛГОРИТМОВ СПУСКА
+  img.stretch(src="img/gradient_descent_strategies.gif")
 
 section(data-markdown): textarea(data-template).
   ### Доп-Материал
@@ -83,11 +79,35 @@ section(data-markdown): textarea(data-template).
 section
   h3 Backpropagation
   p Oбратное распространение ошибки - модификация градиентного спуска применительно к нейронным сетям
+  ul
+    li.fragment Смысл алгоритма - спустить наказание за ошибку вниз, обратно по иерархии, и наказать всех виновных.
+    li.fragment Серебрянная пуля обучения NN, на порядки ускорившая обучение.
+    li.fragment Внутри состоит из частных производных более чем полностью.
+    li.fragment Поэтому любит когда все активационные функции дифференцируемы.
+
+section
+  h3 Backpropagation
+  img.stretch(src="img/nn_backpropagation.gif")
 
 section(data-markdown): textarea(data-template).
   ### Доп-Материал
+
+section(data-markdown): textarea(data-template).
+  #### Loss function
+  - [Объяснение от Siraj'а](https://www.youtube.com/watch?v=IVVVjBSk9N0)
+  - [Лекция, стэндфорд](https://www.youtube.com/watch?v=h7iBpEHGVNc)
+  - [подборка, youtube](https://www.youtube.com/results?search_query=loss+function)
+
+section(data-markdown): textarea(data-template).
+  #### Gradient descent
+  - [Себястиан Рюдер](http://ruder.io/optimizing-gradient-descent/)
+  - [Siraj](https://www.youtube.com/watch?v=nhqo0u1a6fw)
+
+section(data-markdown): textarea(data-template).
+  #### Backpropagation
   - [Siraj](https://www.youtube.com/watch?v=Ilg3gGewQ5U)
   - [Опять Siraj](https://www.youtube.com/watch?v=FaHHWdsIYQg)
   - [Математично](https://www.youtube.com/watch?v=IHZwWFHWa-w)
   - [на русском](https://www.youtube.com/watch?v=HA-F6cZPvrg)
-  - [подборка на русскоам](https://www.youtube.com/results?search_query=%D0%BE%D0%B1%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5+%D1%80%D0%B0%D1%81%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BE%D1%88%D0%B8%D0%B1%D0%BA%D0%B8)
+
+
