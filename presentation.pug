@@ -1,12 +1,18 @@
+mixin li
+  li.fragment.fade-in-then-semi-out
+    block
+
+mixin p
+  p.fragment.fade-in-then-semi-out
+    block
+
 include intro
 
 section
   include machine_learning
 
 include neural_networks
-
-section
-  h2 Инструменты
+section 
   include tools
 
 section
