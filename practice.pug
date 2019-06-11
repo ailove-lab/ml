@@ -1,6 +1,6 @@
 section
   h2 Время практики
-  h5 🡓
+  +arr
 
 mixin py 
   pre.python: code(data-trim data-noescape)
@@ -111,3 +111,63 @@ section
 
 section
   h3 Примеры посерьёзней
+
+section
+  img(src="img/kubensis.jpg")
+  h3 Категоризация грибов
+  ul
+    +li Вы посмотрели подкаст с <a href="https://youtu.be/6BeTUYAUXbY?t=4100">Полом Стеменсом</a> о нейрогенезе
+    +li Во время прогулки в лесу нашли целую поляну чего-то похожего на Кубенсис 
+    +li Теперь жизнено важно определить к какому виду отностится найденные грибы
+    +li Кот их есть на отрез отказывается
+
+section
+  h3 Придется обучить нейронку
+  img(src="img/inception_v3.png")
+  ul
+    +li Inception v3, обучение такой сети обходится гуглу в $20 000
+    +li Но уже обученную сеть можно очень быстро дообучить под новые задачи
+
+section
+  h3 Повышение обобщения
+  img(src="img/convolution_layers.png")
+
+section
+  h3 Приступим
+    
+  ul
+    +li: a(href="https://archive.ics.uci.edu/ml/datasets/mushroom") Скачиваем датасет грибов
+    +li Ставим tensorflow
+      pre > pip install tensorflow
+    +li Прямо в коробке с ним лежит пример <pre>examples/image_retraining/retrain.py<pre>
+    +li Запускаем
+      pre > python retrain.py --image_dir ~/my_mushrooms_dataset
+    +li Идем заваривать чай
+
+section
+  h3 Пол часа спустя
+  ul
+    +li С умным видом смотрим в логи
+    +li Достаем из коробки
+      pre examples/label_image/label_image.py
+    +li Запускаем
+      pre.
+        > python label_image.py \
+        --graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+        --input_layer=Placeholder \
+        --output_layer=final_result \
+        --image=$HOME/magic_mushrooms/harvest_4/oooh_this_good_one.jpg
+    +li: q О да чувак! Это он на 74%
+
+section
+  h3 Котя ты чего?
+  img(src="img/cat.gif")
+    
+section
+  h3 <div><span style="color:#ff8080;">Р</span><span style="color:#ffbf80;">А</span><span style="color:#ffff80;">Б</span><span style="color:#c0ff80;">О</span><span style="color:#80ff80;">Т</span><span style="color:#80ffff;">А</span><span style="color:#8080ff;">Е</span><span style="color:#c680ff;">Т</span></div>
+  h3.fragment Это будет шикарный стартап!
+    
+section
+    +p Вы это заметили?
+    +p Мы даже <a href="https://github.com/tensorflow/hub/blob/master/examples/image_retraining/retrain.py">код</a> не открыли!
+    +p Ну и ладно, главное, что нам понятно, что он делает!
